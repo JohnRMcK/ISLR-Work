@@ -1,0 +1,32 @@
+> # K-Nearest neighbours.
+> library(class)
+> train.X=cbind(Lag1,Lag2)[train,]
+> test.X=cbind(Lag1,Lag2)[!train,]
+> train.Direction=Direction[train]
+> set.seed(1)
+> knn.pred=knn(train.X,test.X,train.Direction,k=1)
+> table(knn.pred,Direction .2005)
+Error: unexpected numeric constant in "table(knn.pred,Direction .2005"
+> table(knn.pred,Direction.2005)
+        Direction.2005
+knn.pred Down Up
+    Down   43 58
+    Up     68 83
+> 83/43
+[1] 1.930233
+> 83+43
+[1] 126
+> /252
+Error: unexpected '/' in "/"
+> 126/252
+[1] 0.5
+> knn.pred=knn(train.X,test.X,train.Direction,k=3)
+> table(knn.pred,Direction.2005)
+        Direction.2005
+knn.pred Down Up
+    Down   48 54
+    Up     63 87
+> 48+87
+[1] 135
+> 135/252
+[1] 0.5357143
